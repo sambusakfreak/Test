@@ -16,12 +16,11 @@
                     </div>
 
                     
-                    <div id ="paste">
-                        <div class="panel-body " id="copy">
-                         
-                            <fieldset>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                    <div id="add-sets">
+                        <div class="content">
+                            <div class="panel-body ">
+                                <div class="row ">
+                                    <div class="col-sm-12 col-md-10  col-md-offset-1 " id="dupi">
                                         <div class="form-group">
                                             <label><strong>New Input</strong></label>
                                             <div class="input-group">
@@ -36,33 +35,37 @@
                                                 <span class="input-group-addon">
                                                     <i class="glyphicon glyphicon-lock"></i>
                                                 </span>
-                                                <select class="form-control" asp-for="@Model.Datatype" asp-items="@Model.Types">
+                                                <select id="selecta" class="form-control" asp-for="@Model.Datatype" asp-items="@Model.Types">
                                                     <option disabled="">Select</option>
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <button id="btn-remove-set" class="btn " data-toggle="tooltip" title="Remove Set"><span class="glyphicon glyphicon-minus"></span></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </fieldset>
+
+                            </div>
                         </div>
                     </div>   <!--To duplicate-->
                     <div id="dup"></div>
 
                     <div class="panel-footer ">
-                        <p></p>
+                        
                     </div>
                 </div>
+                
+             
 
 
 
                 <hr />
                 <div class="text-center">
                     <div class="btn">
-                        <button class="btn btn-success add_form_field" type="button"  onclick="Addinput()"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                        <button id="btn-add-set" class="btn  add_form_field" type="button"  > <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
                     </div>
-                    <div class="btn">
-                        <button class="btn btn-danger" type="button" onclick=""> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button>
-                    </div>
+
                 </div>
                 <hr />
                 <input type="submit" class="btn btn-lg btn-primary btn-block" value="Search">
@@ -94,7 +97,7 @@
         }
         catch (Exception e)
         {
-            <p>Cant calc Data Count</p>
+            @Model.Datatype;
         }
 
 
@@ -106,12 +109,28 @@
 </div>
 
 <style>
-    .add_form_field .panel-heading {
+    .content .add_form_field .panel-heading {
         padding: 5px 15px;
     }
 
     .panel-footer {
         padding: 1px 15px;
+        color: #A0A0A0;
+    }
+
+    .btn-add-set {
+        color: #A0A0A0;
+    }
+
+    .add-set {
+        color: #A0A0A0;
+    }
+
+    .add-sets {
+        color: #A0A0A0;
+    }
+
+    .btn-remove-set {
         color: #A0A0A0;
     }
 </style>
